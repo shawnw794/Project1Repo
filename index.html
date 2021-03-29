@@ -14,7 +14,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">GreenThumb Garden Guide</a>
+              <a class="navbar-brand" href="#">Cooking at Home</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -31,90 +31,120 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Other Resources</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">Fertilizers</a></li>
-                      <li><a class="dropdown-item" href="#">Soils</a></li>
-                      <li><a class="dropdown-item" href="#">Tips for Planting</a></li>
-                      <li><a class="dropdown-item" href="#">Planting Zones</a></li>
+                      <li><a class="dropdown-item" href="#">Trending Recipes</a></li>
+                      <li><a class="dropdown-item" href="#">Popular Wines</a></li>
+                      <li><a class="dropdown-item" href="#">Tips for Entertaing at Home</a></li>
+                      <li><a class="dropdown-item" href="#">Cocktails and Appetizers</a></li>
                     </ul>
                   </li>
                 </ul>
                 <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search for Plants" aria-label="Search">
+                  <input class="form-control me-2" type="search" placeholder="Search for Recipes" aria-label="Search">
                   <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
               </div>
             </div>
           </nav>
-          <!-- Bootstrap carousel to hold Plant Images - holds up to three images - image sources must be cusomized using JS -->
-            <div class= "plantInfoContainer">
-                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="..." class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="...">
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-                <!-- Area containing pertinent plant information -->
-                <div class="plantInfo" id="targetPlantInfo">
-                    <h3 id = "selectedPlanName"></h3>
-                        <div class="searchDetails">Common Name:<span id = "plantCommonName"></span></div>
-                        <div class="searchDetails">Scientific Name:<span id = "plantSciName"></span></div>
-                        <div class="searchDetails">Description:<span id = "plantDescription"></span></div>
-                        <div class="targetDetails">Sun/Shade Needs:<span class = "plantLight"></span></div>
-                        <div class="targetDetails">Maximum/Minimum Temprature Needs:<span class = "plantTemp"></span></div>
+          <!-- Continer to hold three recipe cards -->
+            <div class="recipe-group">
+                <div class="card" id="recipeOne">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" id="nameOne">Recipe Name</h5>
+                    <p class="card-text" id="descriptionOne">Short Recipe Description</p>
+                    <ul class = "ingredientList" id= "ingredientsOne">Ingredients:
+                        <li></li>
+                    </ul>
+                    <ol class = "instructionList" id="instructionsOne">Instructions:
+                        <li></li>
+                    </ol>
+                    <p class="winePair" id = "winePairOne">Suggested Wine Pairings: <span id = "winePairingsOne"></span></p>
                 </div>
-                <!-- Search form to search by zip code for the user's area -->
-                <h6 class = "searchText">Get Your 3 Day Forecast</h6>
-                    <form id="user-form" name="user-form" class="card-Body">
-                        <label class="form-label" form= "zipCode">Enter Zip Code</label>
-                        <input name="zip-code" id="zip-code" type="text" autofocus="true" class="form-input" placeholder = "Zip Code" />
-                        <br>
-                        <button class="searchBtn" id="searchBtn">Get Weather</button>
-                    </form>
-                <!-- Div contining a three day forecast for the zip code entered in form -->
-                <div class="threeDayForecast" id="threeDayForecast">
-                    <h3>Your 3 Day Forecast</h3> 
-                        <div class="forecastContainer" id="forecastContainer">
-                            <div id="forecastCurrent" class="threeDay">
-                                <p class="date">Date<span class ="todayDate"></span></p>
-                                <i<span class = "todayDateIcon">Icon</span></i>
-                                <p class="temp">Temp:<span id = "todayTemp"></span></p>
-                                <p class="humidity">Humidity:<span id = "todayHumidity"></span></p>
+                </div>
+                <div class="card" id = "recipeTwo">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" id = "nameTwo">Recipe Name</h5>
+                    <p class="card-text">Short Recipe Description</p>
+                    <ul class = "ingredientList" id= "ingredientsTwo">Ingredients:
+                        <li></li>
+                    </ul>
+                    <ol class = "instructionList" id="instructionsTwo">Instructions:
+                        <li></li>
+                    </ol>
+                    <p class = "winePair" id = "winePairTwo">Suggested Wine Pairings:<span id = "winePairingsTwo"></span></p>
+                </div>
+                </div>
+                <div class="card" id = "recipeThree">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" id ="nameThree">Recipe Name</h5>
+                    <p class="card-text">Short Recipe Description</p>
+                    <ul class = "ingredientList" id= "ingredientsThree">Ingredients:
+                        <li></li>
+                    </ul>
+                    <ol class = "instructionList" id="instructionsThree">Instructions:
+                        <li></li>
+                    </ol>
+                    <p class = "winePair" id = "winePairThree">Suggested Wine Pairings:<span id = "winePairingsThree"></span></p>
+                </div>
+                </div>
+            </div>  
+            <div class = "cocktailContainer"></div>
+                <h5 class = "cocktails">Some After Dinner Cocktails to Try</h5>
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="..." alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title" id = "cocktailNameOne">Cocktail Name Here</h5>
+                              <p class="card-text" id = "cocktailTwoInstructions">
+                                  <ul>Ingredients & Instructions
+                                    <li></li>
+                                  </ul
+                              ></p>
+                            
                             </div>
-                            <div id="forecastCurrent" class="threeDay">
-                                <p class="date">Date<span class ="tomorrowDate"></span></p>
-                                <i<span class = "tomorrowDateIcon">Icon</span></i>
-                                <p class="temp">Temp:<span id = "tomorrowTemp"></span></p>
-                                <p class="humidity">Humidity:<span id = "tomorrowHumidity"></span></p>
-                            </div>
-                            <div id="forecastCurrent" class="threeDay">
-                                <p class="date">Date<span class ="dayAfterDate"></span></p>
-                                <i<span class = "dayAfterDateIcon">Icon</span></i>
-                                <p class="temp">Temp:<span id = "dayAfterTemp"></span></p>
-                                <p class="humidity">Humidity:<span id = "dayAfterHumidity"></span></p>
-                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <!-- Area to contain information on whether or not now is a good time to plant a given plan -->
-                    <div class="plantIndicator"><span id="plantIndicatorInfo"></span></div>
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="..." alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title" id = "cocktailNameTwo">Cocktail Name Here</h5>
+                              <p class="card-text" id = "cocktailTwoInstructions">
+                                  <ul>Ingredients & Instructions
+                                    <li></li>
+                                  </ul>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="..." alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title" id = "cocktailNameThree">Cocktail Name Here</h5>
+                              <p class="card-text" id = "cocktailThreeInstructions">
+                                  <ul>Ingredients & Instructions
+                                    <li></li>
+                                  </ul>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                 </div>
             </div>
     <!-- JavaScript Bundle with Popper -->
