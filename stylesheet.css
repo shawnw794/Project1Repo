@@ -63,6 +63,8 @@ body {
 /* Dropdown Underlining when Hovering */
 .dropdown-menu a:hover {
     text-decoration: underline;
+    background-color: rgb(224, 195, 157);
+    color: rgb(82, 3, 3);
 }
 
 /* User Input Bar to Search Recipe */
