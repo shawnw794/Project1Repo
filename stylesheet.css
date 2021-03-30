@@ -20,6 +20,9 @@ body {
     border-radius: 0;
     margin-bottom: 0;
     font-size: 16px;
+    width: 100%;
+    white-space: nowrap;
+    padding-right: 100px;
 }
 
 /*  Navigation Title */
@@ -28,16 +31,18 @@ body {
     font-size: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 10px;
+    margin-left: 40px;
     line-height: 50px;
     color: rgb(82, 3, 3);
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 800px) {
     .navbar-brand {
         font-size: 40px;
     }
 }
+
+
 
 /* Navigation Menu Options */
 .navbar a {
@@ -177,4 +182,30 @@ footer {
     margin-top: 20px;
     height: 60px;
     padding-top: 20px;
+}
+
+/* Modals */
+
+.modal-content {
+    margin: 30% auto;
+    border: none;
+}
+
+.modal-header {
+    background-color: rgb(82, 3, 3);
+    color: rgb(224, 195, 157);
+}
+
+.close {
+    background-color: rgb(224, 195, 157);
+    color: rgb(82, 3, 3);
+}
+
+.modal-title {
+    font-weight: 900;
+}
+
+.modal-body {
+    background-color: rgb(250, 235, 215);
+    color: rgb(82, 3, 3);
 }
