@@ -1,3 +1,7 @@
+var searchForm = $('#searchForm');
+var nameOne = document.querySelector('#nameOne');
+var imgOne = document.querySelector('#imgOne');
+
 // Showing the first slide and creating a variable to use in other functions to change slides
 var slideIndex = 1;
 showCurrent(slideIndex);
@@ -35,3 +39,50 @@ function showCurrent(n) {
   slides[slideIndex-1].style.display = "block";
   dot[slideIndex-1].className += " active";
 }
+
+
+function inputHandler(event) {
+  event.preventDefault();
+
+  // gets users input from the search form
+  var userSearch = $('input[name="searchInput"]').val();
+  console.log(userSearch);
+
+  // error if no value entered
+  if (!userSearch) {
+    console.log('Nothing was searched for!');
+    return;
+  } else {
+      getApi();
+      
+  }
+
+  function getApi() {
+    // replace `octocat` with anyone else's GitHub username
+    var requestUrl = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=254301e6f27a4fd1a78627b0c66f55d4&query=' + userSearch;
+  
+    fetch(requestUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+            
+        nameOne.textContent = data.results[0].title;
+        imgOne.setAttribute("height", 300);
+        imgOne.setAttribute("width", 300);
+        imgOne.setAttribute("src", data.results[0].image);
+        })
+        .catch(function (error) {
+          console.log(error);
+      
+        })
+      
+  }
+
+
+}
+
+
+
+searchForm.on('submit', inputHandler);
