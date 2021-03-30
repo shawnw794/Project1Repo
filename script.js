@@ -1,6 +1,10 @@
 var searchForm = $('#searchForm');
 var nameOne = document.querySelector('#nameOne');
+var nameTwo = document.querySelector('#nameTwo');
+var nameThree = document.querySelector('#nameThree');
 var imgOne = document.querySelector('#imgOne');
+var imgTwo = document.querySelector('#imgTwo');
+var imgThree = document.querySelector('#imgThree');
 
 // Showing the first slide and creating a variable to use in other functions to change slides
 var slideIndex = 1;
@@ -72,6 +76,14 @@ function inputHandler(event) {
         imgOne.setAttribute("height", 300);
         imgOne.setAttribute("width", 300);
         imgOne.setAttribute("src", data.results[0].image);
+        nameTwo.textContent = data.results[1].title;
+        imgTwo.setAttribute("height", 300);
+        imgTwo.setAttribute("width", 300);
+        imgTwo.setAttribute("src", data.results[1].image);
+        nameThree.textContent = data.results[2].title;
+        imgThree.setAttribute("height", 300);
+        imgThree.setAttribute("width", 300);
+        imgThree.setAttribute("src", data.results[2].image);
         })
         .catch(function (error) {
           console.log(error);
