@@ -1,6 +1,6 @@
 /* General Body */
 body {
-    background-color: maroon;
+    background-color: rgb(82, 3, 3);
     color: antiquewhite;
     text-align: center;
     width: 100%;
@@ -13,7 +13,7 @@ body {
 
 /* Navigation Bar */
 .navbar {
-    background-color: antiquewhite;
+    background-color: rgb(224, 195, 157);
     padding-top: 15px;
     padding-bottom: 15px;
     border: 0;
@@ -30,7 +30,7 @@ body {
     margin-bottom: 10px;
     margin-left: 10px;
     line-height: 50px;
-    color: maroon;
+    color: rgb(82, 3, 3);
 }
 
 @media screen and (min-width: 1200px) {
@@ -41,7 +41,7 @@ body {
 
 /* Navigation Menu Options */
 .navbar a {
-    color: maroon;
+    color: rgb(82, 3, 3);
 }
 
 .navbar-nav li {
@@ -56,8 +56,8 @@ body {
 
 /* Dropdown menu */
 .dropdown-menu {
-    background-color: antiquewhite;
-    border-color: maroon;
+    background-color: rgb(224, 195, 157);
+    border-color: rgb(82, 3, 3);
 }
 
 /* Dropdown Underlining when Hovering */
@@ -69,23 +69,23 @@ body {
     margin-top: 20px;
     margin-left: 5px;
     margin-bottom: 40px;
-    background-color: antiquewhite;
-    color: maroon;
+    background-color: rgb(250, 235, 215);
+    color: rgb(82, 3, 3);
 }
 
 #searchInput:focus {
-    border-color: maroon;
-    background-color: antiquewhite;
+    border-color: rgb(82, 3, 3);
+    background-color: rgb(224, 195, 157);
 }
 
 #searchInput:visited {
-    background-color: antiquewhite;
+    background-color: rgb(224, 195, 157);
 }
 
 #searchBtn {
-    color: maroon;
-    background-color: antiquewhite;
-    border-color: antiquewhite;
+    color: rgb(82, 3, 3);
+    background-color: rgb(224, 195, 157);
+    border-color: rgb(224, 195, 157);
     border-width: 5px;
     margin-right: 10px;
     margin-top: 20px;
@@ -93,8 +93,8 @@ body {
 }
 
 .recipe {
-    background-color: antiquewhite;
-    color: maroon;
+    background-color: rgb(233, 204, 167);
+    color: rgb(82, 3, 3);
     height: auto;
     flex-grow: inherit;
     margin: auto;
@@ -104,8 +104,8 @@ body {
 }
 
 .cocktail {
-    background-color: antiquewhite;
-    color: maroon;
+    background-color: rgb(224, 195, 157);
+    color: rgb(82, 3, 3);
     height: auto;
     flex-grow: inherit;
     margin: auto;
@@ -114,9 +114,9 @@ body {
     border-radius: 20px;
 }
 
-.bg-5 {
-    background-color: antiquewhite;
-    color:maroon;
+footer {
+    background-color: rgb(224, 195, 157);
+    color:rgb(82, 3, 3);
     font-weight: 900;
     margin-top: 40px;
     height: 60px;
