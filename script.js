@@ -62,7 +62,7 @@ function inputHandler(event) {
   }
 
   function getApi() {
-    // replace `octocat` with anyone else's GitHub username
+    // calls the API
     var requestUrl = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=254301e6f27a4fd1a78627b0c66f55d4&query=' + userSearch;
   
     fetch(requestUrl)
@@ -71,7 +71,7 @@ function inputHandler(event) {
       })
       .then(function (data) {
         console.log(data);
-            
+        // Populates the recipe cards with results from API call    
         nameOne.textContent = data.results[0].title;
         imgOne.setAttribute("height", 300);
         imgOne.setAttribute("width", 300);
@@ -96,5 +96,5 @@ function inputHandler(event) {
 }
 
 
-
+// Invokes inputHandler on user submission
 searchForm.on('submit', inputHandler);
