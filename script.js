@@ -1,4 +1,5 @@
 var searchForm = $('#searchForm');
+var searchInput = document.querySelector("#searchInput")
 var recipeCardsToggler = document.querySelector("#recipeCardsToggler");
 var coctailCardsToggler = document.querySelector("#coctailCardsToggler");
 var nameOne = document.querySelector('#nameOne');
@@ -16,6 +17,9 @@ var descriptionThree = document.querySelector("#descriptionThree");
 var recipeLinkOne = document.querySelector("#recipeLinkOne");
 var recipeLinkTwo = document.querySelector("#recipeLinkTwo");
 var recipeLinkThree = document.querySelector("#recipeLinkThree");
+var winePairOne = document.querySelector("#winePairOne");
+var winePairTwo = document.querySelector("#winePairTwo");
+var winePairThree = document.querySelector("#winePairThree");
 
 // Showing the first slide and creating a variable to use in other functions to change slides
 var slideIndex = 1;
@@ -59,9 +63,11 @@ function showCurrent(n) {
 function inputHandler(event) {
   event.preventDefault();
 
-  // gets users input from the search form
+  // gets users input from the search and clears the form
   var userSearch = $('input[name="searchInput"]').val();
+  searchInput.value="";
   console.log(userSearch);
+
 
   // error if no value entered
   if (!userSearch) {
@@ -144,6 +150,11 @@ function inputHandler(event) {
         recipeLinkTwo.textContent = data2[1].sourceUrl;
         recipeLinkThree.setAttribute("href", data2[2].sourceUrl);
         recipeLinkThree.textContent = data2[2].sourceUrl;
+
+        winePairOne.textContent = data2[0].winePairing.pairingText;
+        winePairTwo.textContent = data2[1].winePairing.pairingText;
+        winePairThree.textContent = data2[2].winePairing.pairingText;
+       
         })
 
         .catch(function (error) {
