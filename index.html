@@ -62,52 +62,55 @@
                   <button class="btn btn-outline-light" id="searchBtn" type="submit">Search</button>
                 </form>
           <!-- Recipes -->
+          <div id="recipeCardsToggler" style="display: none">
           <h2 class = "cocktails">Try These Recipes and Their Wine Pairings</h2>
         <div class="recipe-group row">
             <div class="card col-sm-3 recipe" id="recipeOne">
-            <img src="..." id="imgOne" class="card-img-top" alt="...">
+            <img src="..." id="imgOne" class="card-img-top p-2" alt="...">
             <div class="card-body">
                 <h5 class="card-title" id="nameOne">Recipe Name</h5>
                 <p class="card-text" id="descriptionOne">Short Recipe Description</p>
-                <ul class = "ingredientList" id= "ingredientsOne">Ingredients:
+                <!-- <ul class = "ingredientList" id= "ingredientsOne">Ingredients:
                     <li></li>
-                </ul>
-                <ol class = "instructionList" id="instructionsOne">Instructions:
-                    <li></li>
-                </ol>
+                </ul> -->
+                <p class = "instructionList" id="instructionsOne">For more information and instructions for this recipe, visit:
+                    <a href="" id="recipeLinkOne"></a>
+                <p>
                 <p class="winePair" id = "winePairOne">Suggested Wine Pairings: <span id = "winePairingsOne"></span></p>
             </div>
             </div>
             <div class="card col-sm-3 recipe" id = "recipeTwo">
-            <img src="..." id="imgTwo" class="card-img-top" alt="...">
+            <img src="..." id="imgTwo" class="card-img-top p-2" alt="...">
             <div class="card-body">
                 <h5 class="card-title" id = "nameTwo">Recipe Name</h5>
-                <p class="card-text">Short Recipe Description</p>
-                <ul class = "ingredientList" id= "ingredientsTwo">Ingredients:
-                    <li></li>
-                </ul>
-                <ol class = "instructionList" id="instructionsTwo">Instructions:
-                    <li></li>
-                </ol>
+                <p class="card-text" id="descriptionTwo">Short Recipe Description</p>
+                <!-- <ul class = "ingredientList" id= "ingredientsTwo">Ingredients:
+                    <li id=></li>
+                </ul> -->
+                <p class = "instructionList" id="instructionsTwo">For more information and instructions for this recipe, visit:
+                  <a href="" id="recipeLinkTwo"></a>
+                <p>
                 <p class = "winePair" id = "winePairTwo">Suggested Wine Pairings:<span id = "winePairingsTwo"></span></p>
             </div>
             </div>
             <div class="card col-sm-3 recipe" id = "recipeThree">
-            <img src="..." id="imgThree" class="card-img-top" alt="...">
+            <img src="..." id="imgThree" class="card-img-top p-2" alt="...">
             <div class="card-body">
                 <h5 class="card-title" id ="nameThree">Recipe Name</h5>
-                <p class="card-text">Short Recipe Description</p>
-                <ul class = "ingredientList" id= "ingredientsThree">Ingredients:
+                <p class="card-text" id="descriptionThree">Short Recipe Description</p>
+                <!-- <ul class = "ingredientList" id= "ingredientsThree">Ingredients:
                     <li></li>
-                </ul>
-                <ol class = "instructionList" id="instructionsThree">Instructions:
-                    <li></li>
-                </ol>
+                </ul> -->
+                <p class = "instructionList" id="instructionsThree">For more information and instructions for this recipe, visit:
+                  <a href="" id="recipeLinkThree"></a>
+                <p>
                 <p class = "winePair" id = "winePairThree">Suggested Wine Pairings:<span id = "winePairingsThree"></span></p>
             </div>
             </div>
         </div>
+      </div>
         <!--Cocktails-->
+        <div id="coctailCardsToggler" style="display: none">
         <h3 class="cocktails">Some After Dinner Cocktails to Try</h3>
         <div class="slideshow-container">
             <div class="cocktailSlideshow">
@@ -178,11 +181,11 @@
                 <span class="dot" onclick="dotSlide(2)"></span>
                 <span class="dot" onclick="dotSlide(3)"></span>
             </div>
-
+    </div>
     <!--Footer-->
-    <footer class="container-fluid text-center">
+    <!-- <footer class="container-fluid text-center">
         <p>Project One</p>
-    </footer>
+    </footer> -->
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
