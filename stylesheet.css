@@ -22,7 +22,7 @@ body {
     font-size: 16px;
     width: 100%;
     white-space: nowrap;
-    padding-right: 100px;
+    padding-right: 200px;
 }
 
 /*  Navigation Title */
@@ -38,11 +38,9 @@ body {
 
 @media screen and (min-width: 800px) {
     .navbar-brand {
-        font-size: 40px;
+        font-size: 50px;
     }
 }
-
-
 
 /* Navigation Menu Options */
 .navbar a {
@@ -75,10 +73,12 @@ body {
 /* User Input Bar to Search Recipe */
 #searchInput {
     margin-top: 20px;
-    margin-left: 5px;
     margin-bottom: 40px;
     background-color: rgb(250, 235, 215);
     color: rgb(82, 3, 3);
+    height: 60px;
+    width: 80%;
+    margin-left: 7.5%;
 }
 
 /* When user clicks to input a search, a light box-shadow appears */
@@ -128,7 +128,7 @@ body {
 
 /* Slideshow */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 1400px;
   position: relative;
   margin: auto;
 }
@@ -180,9 +180,16 @@ footer {
     color:rgb(82, 3, 3);
     font-weight: 900;
     margin-top: 20px;
-    height: 60px;
-    padding-top: 20px;
+    height: 90px;
+    position: absolute;
+    padding-top: 1.5%;
 }
+
+@media screen and (min-width: 1500px) {
+    footer {
+    bottom: 0;
+    }}
+
 
 /* Modals */
 
