@@ -93,7 +93,7 @@ function inputHandler(event) {
         imgThree.setAttribute("src", data.results[2].image);
         
 
-
+        getApi2();
         return;
         })
 
@@ -116,7 +116,7 @@ function inputHandler(event) {
   function getApi2() {
     // calls the API
     
-     var requestUrl2 = "https://api.spoonacular.com/recipes/"+ recipeID + "/information?includeNutrition=false";
+     var requestUrl2 = "https://api.spoonacular.com/recipes/"+ recipeID + "/information?apiKey=254301e6f27a4fd1a78627b0c66f55d4&includeNutrition=false";
       
     fetch(requestUrl2)
       .then(function (response2) {
