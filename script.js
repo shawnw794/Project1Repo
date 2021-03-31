@@ -5,6 +5,7 @@ var nameThree = document.querySelector('#nameThree');
 var imgOne = document.querySelector('#imgOne');
 var imgTwo = document.querySelector('#imgTwo');
 var imgThree = document.querySelector('#imgThree');
+var recipeID = "";
 
 // Showing the first slide and creating a variable to use in other functions to change slides
 var slideIndex = 1;
@@ -57,42 +58,87 @@ function inputHandler(event) {
     console.log('Nothing was searched for!');
     return;
   } else {
+
       getApi();
+      
       
   }
 
-  function getApi() {
+ async function getApi() {
     // calls the API
-    var requestUrl = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=254301e6f27a4fd1a78627b0c66f55d4&query=' + userSearch;
-  
+     var requestUrl = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=254301e6f27a4fd1a78627b0c66f55d4&query=' + userSearch;
+     
     fetch(requestUrl)
       .then(function (response) {
         return response.json();
       })
       .then(function (data) {
         console.log(data);
+        recipeID = data.results[0].id;
+        console.log(recipeID);
         // Populates the recipe cards with results from API call    
         nameOne.textContent = data.results[0].title;
         imgOne.setAttribute("height", 300);
         imgOne.setAttribute("width", 300);
         imgOne.setAttribute("src", data.results[0].image);
+
         nameTwo.textContent = data.results[1].title;
         imgTwo.setAttribute("height", 300);
         imgTwo.setAttribute("width", 300);
         imgTwo.setAttribute("src", data.results[1].image);
+
         nameThree.textContent = data.results[2].title;
         imgThree.setAttribute("height", 300);
         imgThree.setAttribute("width", 300);
         imgThree.setAttribute("src", data.results[2].image);
+        
+
+
+        return;
         })
+
         .catch(function (error) {
           console.log(error);
       
         })
+        
+        
       
+        
   }
+ 
+ 
 
 
+
+  
+
+  function getApi2() {
+    // calls the API
+    
+     var requestUrl2 = "https://api.spoonacular.com/recipes/"+ recipeID + "/information?includeNutrition=false";
+      
+    fetch(requestUrl2)
+      .then(function (response2) {
+        return response2.json();
+      })
+      .then(function (data2) {
+        console.log(data2);
+     
+        })
+
+        .catch(function (error) {
+          console.log(error);
+      
+        })
+        
+        
+      
+    } 
+    
+  //   getApi().then(
+  //   function(recipeID) {getApi2();},
+  // );
 }
 
 
