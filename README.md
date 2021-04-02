@@ -14,7 +14,7 @@ Github Code Repo: https://github.com/rickyonthephone/Project1Repo
 
 Github Pages deployment: https://rickyonthephone.github.io/Project1Repo/
 
-Screenshot: ![screenshot]()
+Screenshot: ![screenshot](https://github.com/rickyonthephone/Project1Repo/blob/master/Screen%20Shot%202021-04-02%20at%201.01.49%20PM.png)
 
 ## Acceptance Criteria for MVP App Build
 
