@@ -10,7 +10,7 @@ Users are able to search by the kind of food, cuisine, or meal they are looking 
 
 We see incorporation of the cocktails as a key element because many "at home gourmonds" focus on the food. And while we think prepping and cooking a meal is great, why not step outside of your comfort zone and exercise your chops (no pun intended) with creating new and exciting beverages you may have never tried. Putting together a cocktail is not only fun, but it gives people something to enjoy before and/or after they've had their meal. 
 
-Github Code Repo:
+Github Code Repo: https://github.com/rickyonthephone/Project1Repo
 
 Github Pages deployment:
 
