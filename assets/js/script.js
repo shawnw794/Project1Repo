@@ -3,6 +3,8 @@ var searchInput = document.querySelector("#searchInput");
 var recipeCardsToggler = document.querySelector("#recipeCardsToggler");
 var coctailCardsToggler = document.querySelector("#coctailCardsToggler");
 var landingPageToggler = document.querySelector("#landingPage");
+var themeToggler = $('#themeToggler');
+var checkMode = document.querySelector("#checkMode");
 var nameOne = document.querySelector('#nameOne');
 var nameTwo = document.querySelector('#nameTwo');
 var nameThree = document.querySelector('#nameThree');
@@ -32,6 +34,14 @@ var cocktailThreeImg = document.querySelector('#cocktailThreeImg');
 var cocktailOneInstructions = document.querySelector('#cocktailOneInstructions');
 var cocktailTwoInstructions = document.querySelector('#cocktailTwoInstructions');
 var cocktailThreeInstructions = document.querySelector('#cocktailThreeInstructions');
+// Theme Local Storage
+var currentTheme = localStorage.getItem("Theme");
+
+function checkTheme(){
+  if (localStorage.getItem("Theme") === "dark")
+  darkMode();
+}
+checkTheme();
 
 // Showing the first slide and creating a variable to use in other functions to change slides
 var slideIndex = 1;
@@ -79,8 +89,7 @@ function inputHandler(event) {
   var userSearch = $('input[name="searchInput"]').val();
   searchInput.value="";
   console.log(userSearch);
-
-
+ 
   // error if no value entered
   if (!userSearch) {
     console.log('Nothing was searched for!');
@@ -94,7 +103,7 @@ function inputHandler(event) {
 
  async function getApi() {
     // calls the API
-     var requestUrl = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=ab9e9f4b6c1845aabcce129dd18aa63b&query=' + userSearch + " dinner";
+     var requestUrl = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=254301e6f27a4fd1a78627b0c66f55d4&query=' + userSearch + " dinner";
      
     fetch(requestUrl)
       .then(function (response) {
@@ -150,7 +159,7 @@ function inputHandler(event) {
   function getApi2() {
     // calls the API a second time with the recipe ID number for more specific information
     
-     var requestUrl2 = "https://api.spoonacular.com/recipes/informationBulk?apiKey=ab9e9f4b6c1845aabcce129dd18aa63b&ids="+ recipeID1 + "," + recipeID2 + "," + recipeID3 + "&includeNutrition=false";
+     var requestUrl2 = "https://api.spoonacular.com/recipes/informationBulk?apiKey=254301e6f27a4fd1a78627b0c66f55d4&ids="+ recipeID1 + "," + recipeID2 + "," + recipeID3 + "&includeNutrition=false";
       
     fetch(requestUrl2)
       .then(function (response2) {
@@ -201,8 +210,10 @@ function getCocktailOneApi() {
     cocktailOneImg.setAttribute("width", 300);
     cocktailOneImg.setAttribute("style", "border-radius: 40px");
     cocktailOneImg.setAttribute("src", data.drinks[0].strDrinkThumb);
-    cocktailOneInstructions.textContent = data.drinks[0].strIngredient1 + ", " + data.drinks[0].strIngredient2 + ", " + data.drinks[0].strIngredient3 + ", " + data.drinks[0].strIngredient4 + ", " + data.drinks[0].strIngredient5 + ", " + data.drinks[0].strIngredient6 + ", " + data.drinks[0].strIngredient7 + ", " + data.drinks[0].strIngredient8 + ", " + data.drinks[0].strIngredient9 + ", " + data.drinks[0].strIngredient10;
-  
+   
+    var cocktailOneInstructionsList = data.drinks[0].strIngredient1 + ", " + data.drinks[0].strIngredient2 + ", " + data.drinks[0].strIngredient3 + ", " + data.drinks[0].strIngredient4 + ", " + data.drinks[0].strIngredient5 + ", " + data.drinks[0].strIngredient6 + ", " + data.drinks[0].strIngredient7 + ", " + data.drinks[0].strIngredient8 + ", " + data.drinks[0].strIngredient9 + ", " + data.drinks[0].strIngredient10;
+    cocktailOneInstructionsList = cocktailOneInstructionsList.replaceAll("null", "glug");
+    cocktailOneInstructions.textContent = cocktailOneInstructionsList + "!";
   })
   }
   function getCocktailTwoApi() {
@@ -221,7 +232,10 @@ function getCocktailOneApi() {
       cocktailTwoImg.setAttribute("width", 300);
       cocktailTwoImg.setAttribute("style", "border-radius: 40px");
       cocktailTwoImg.setAttribute("src", data.drinks[0].strDrinkThumb);
-      cocktailTwoInstructions.textContent = data.drinks[0].strIngredient1 + ", " + data.drinks[0].strIngredient2 + ", " + data.drinks[0].strIngredient3 + ", " + data.drinks[0].strIngredient4 + ", " + data.drinks[0].strIngredient5 + ", " + data.drinks[0].strIngredient6 + ", " + data.drinks[0].strIngredient7 + ", " + data.drinks[0].strIngredient8 + ", " + data.drinks[0].strIngredient9 + ", " + data.drinks[0].strIngredient10;
+
+      var cocktailTwoInstructionsList = data.drinks[0].strIngredient1 + ", " + data.drinks[0].strIngredient2 + ", " + data.drinks[0].strIngredient3 + ", " + data.drinks[0].strIngredient4 + ", " + data.drinks[0].strIngredient5 + ", " + data.drinks[0].strIngredient6 + ", " + data.drinks[0].strIngredient7 + ", " + data.drinks[0].strIngredient8 + ", " + data.drinks[0].strIngredient9 + ", " + data.drinks[0].strIngredient10;
+      cocktailTwoInstructionsList = cocktailTwoInstructionsList.replaceAll("null", "glug");
+      cocktailTwoInstructions.textContent = cocktailTwoInstructionsList + "!";
     })
     }
     function getCocktailThreeApi() {
@@ -240,7 +254,10 @@ function getCocktailOneApi() {
         cocktailThreeImg.setAttribute("width", 300);
         cocktailThreeImg.setAttribute("style", "border-radius: 40px");
         cocktailThreeImg.setAttribute("src", data.drinks[0].strDrinkThumb);
-        cocktailThreeInstructions.textContent = data.drinks[0].strIngredient1 + ", " + data.drinks[0].strIngredient2 + ", " + data.drinks[0].strIngredient3 + ", " + data.drinks[0].strIngredient4 + ", " + data.drinks[0].strIngredient5 + ", " + data.drinks[0].strIngredient6 + ", " + data.drinks[0].strIngredient7 + ", " + data.drinks[0].strIngredient8 + ", " + data.drinks[0].strIngredient9 + ", " + data.drinks[0].strIngredient10;
+
+        var cocktailThreeInstructionsList = data.drinks[0].strIngredient1 + ", " + data.drinks[0].strIngredient2 + ", " + data.drinks[0].strIngredient3 + ", " + data.drinks[0].strIngredient4 + ", " + data.drinks[0].strIngredient5 + ", " + data.drinks[0].strIngredient6 + ", " + data.drinks[0].strIngredient7 + ", " + data.drinks[0].strIngredient8 + ", " + data.drinks[0].strIngredient9 + ", " + data.drinks[0].strIngredient10;
+        cocktailThreeInstructionsList = cocktailThreeInstructionsList.replaceAll("null", "glug");
+        cocktailThreeInstructions.textContent = cocktailThreeInstructionsList + "!";
       })
       }
   
@@ -250,3 +267,13 @@ function getCocktailOneApi() {
 
 // Invokes inputHandler on user submission
 searchForm.on('submit', inputHandler);
+themeToggler.on('click', darkMode);
+function darkMode() {
+  var darkBody = document.querySelector("#body");
+  darkBody.classList.toggle("dark-mode");
+  if (darkBody.classList.contains("dark-mode")) {
+    localStorage.setItem("Theme", "dark");
+  } else {
+    localStorage.setItem("Theme", "light");
+  }
+}
