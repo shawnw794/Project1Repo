@@ -12,7 +12,7 @@ We see incorporation of the cocktails as a key element because many "at home gou
 
 Github Code Repo: https://github.com/rickyonthephone/Project1Repo
 
-Github Pages deployment:
+Github Pages deployment: https://rickyonthephone.github.io/Project1Repo/
 
 Screenshot: ![screenshot]()
 
