@@ -25,7 +25,7 @@ var winePairTwo = document.querySelector("#winePairTwo");
 var winePairThree = document.querySelector("#winePairThree");
 var errorCatch = document.querySelector("#errorCatch");
 
-//code for the cocktail API
+//vars for the cocktail API
 var cocktailOneName = document.querySelector('#cocktailNameOne');
 var cocktailTwoName = document.querySelector('#cocktailNameTwo');
 var cocktailThreeName = document.querySelector('#cocktailNameThree');
@@ -35,13 +35,18 @@ var cocktailThreeImg = document.querySelector('#cocktailThreeImg');
 var cocktailOneInstructions = document.querySelector('#cocktailOneInstructions');
 var cocktailTwoInstructions = document.querySelector('#cocktailTwoInstructions');
 var cocktailThreeInstructions = document.querySelector('#cocktailThreeInstructions');
-// Theme Local Storage
-var currentTheme = localStorage.getItem("Theme");
 
-function checkTheme(){
-  if (localStorage.getItem("Theme") === "dark")
-  darkMode();
-}
+
+// Checks to see if user has dark mode enabled
+function checkTheme() {
+  if (localStorage.getItem("Theme") === "dark") {
+    darkMode();
+  } else {
+    $(themeToggler).text("Dark Mode");
+  }
+  
+} 
+
 checkTheme();
 
 // Showing the first slide and creating a variable to use in other functions to change slides
@@ -264,13 +269,11 @@ function getCocktailOneApi() {
         cocktailThreeInstructions.textContent = cocktailThreeInstructionsList + "!";
       })
       }
-  
-  // getCocktailOneApi(); 
-  // getCocktailTwoApi();
-  // getCocktailThreeApi();
 
 // Invokes inputHandler on user submission
 searchForm.on('submit', inputHandler);
+
+// Dark Mode Toggler
 themeToggler.on('click', darkMode);
 function darkMode() {
   var darkBody = document.querySelector("#body");
@@ -284,6 +287,7 @@ function darkMode() {
   var cocktailCard2 = document.querySelector("#cocktailCard2");
   var cocktailCard3 = document.querySelector("#cocktailCard3");
   var dropdown = document.querySelector("#dropdown");
+
   darkBody.classList.toggle("dark-mode");
   darkNav.classList.toggle("navbar-dark");
   dropdown.classList.toggle("dropdown-menu-dark");
@@ -296,10 +300,13 @@ function darkMode() {
   cocktailCard2.classList.toggle("cocktail-dark");
   cocktailCard3.classList.toggle("cocktail-dark");
 
+  // Changes local storage from dark to light depending on user preference
   if (darkBody.classList.contains("dark-mode")) {
     localStorage.setItem("Theme", "dark");
+    $(themeToggler).text("Light Mode");
   } else {
     localStorage.setItem("Theme", "light");
+    $(themeToggler).text("Dark Mode");
     navButton.setAttribute("style", "color:maroon");
   }
 }
