@@ -23,6 +23,7 @@ var recipeLinkThree = document.querySelector("#recipeLinkThree");
 var winePairOne = document.querySelector("#winePairOne");
 var winePairTwo = document.querySelector("#winePairTwo");
 var winePairThree = document.querySelector("#winePairThree");
+var errorCatch = document.querySelector("#errorCatch");
 
 //code for the cocktail API
 var cocktailOneName = document.querySelector('#cocktailNameOne');
@@ -111,7 +112,9 @@ function inputHandler(event) {
       })
       .then(function (data) {
         console.log(data);
-
+        if (data.results.length < 3) {
+          errorCatch.textContent = "Your search did not yield results. Please try again."
+        } else {
         // changes the recipe and coctail cards from hidden to displayed
         landingPageToggler.setAttribute("style", "display: none");
         recipeCardsToggler.setAttribute("style", "display: block");
@@ -147,6 +150,7 @@ function inputHandler(event) {
         // invokes second API call for more specific information using the recipe ID
         getApi2();
         return;
+      }
         })
 
         .catch(function (error) {
