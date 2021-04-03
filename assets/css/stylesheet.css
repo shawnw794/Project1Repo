@@ -173,6 +173,21 @@ body {
 }
 
 /* Cocktail Cards */
+ul {
+    list-style-type: none;
+}
+#cocktailNameOne.card-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+#cocktailNameTwo.card-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+#cocktailNameThree.card-title {
+    font-size: 20px;
+    font-weight: bold;
+}
 .cocktail {
     background-color: rgb(224, 195, 157);
     color: rgb(82, 3, 3);

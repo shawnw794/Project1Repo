@@ -32,9 +32,21 @@ var cocktailThreeName = document.querySelector('#cocktailNameThree');
 var cocktailOneImg = document.querySelector('#cocktailOneImg');
 var cocktailTwoImg = document.querySelector('#cocktailTwoImg');
 var cocktailThreeImg = document.querySelector('#cocktailThreeImg');
-var cocktailOneInstructions = document.querySelector('#cocktailOneInstructions');
-var cocktailTwoInstructions = document.querySelector('#cocktailTwoInstructions');
-var cocktailThreeInstructions = document.querySelector('#cocktailThreeInstructions');
+var cocktailOneInstructionsOne = document.querySelector('#cocktailOneInstructionsOne');
+var cocktailOneInstructionsTwo = document.querySelector('#cocktailOneInstructionsTwo');
+var cocktailOneInstructionsThree = document.querySelector('#cocktailOneInstructionsThree');
+var cocktailOneInstructionsFour = document.querySelector('#cocktailOneInstructionsFour');
+var cocktailOneInstructionsFive = document.querySelector('#cocktailOneInstructionsFive');
+var cocktailTwoInstructionsOne = document.querySelector('#cocktailTwoInstructionsOne');
+var cocktailTwoInstructionsTwo = document.querySelector('#cocktailTwoInstructionsTwo');
+var cocktailTwoInstructionsThree = document.querySelector('#cocktailTwoInstructionsThree');
+var cocktailTwoInstructionsFour = document.querySelector('#cocktailTwoInstructionsFour');
+var cocktailTwoInstructionsFive = document.querySelector('#cocktailTwoInstructionsFive');
+var cocktailThreeInstructionsOne = document.querySelector('#cocktailThreeInstructionsOne');
+var cocktailThreeInstructionsTwo = document.querySelector('#cocktailThreeInstructionsTwo');
+var cocktailThreeInstructionsThree = document.querySelector('#cocktailThreeInstructionsThree');
+var cocktailThreeInstructionsFour = document.querySelector('#cocktailThreeInstructionsFour');
+var cocktailThreeInstructionsFive = document.querySelector('#cocktailThreeInstructionsFive');
 // Theme Local Storage
 var currentTheme = localStorage.getItem("Theme");
 
@@ -104,7 +116,7 @@ function inputHandler(event) {
 
  async function getApi() {
     // calls the API
-     var requestUrl = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=254301e6f27a4fd1a78627b0c66f55d4&query=' + userSearch + " dinner";
+     var requestUrl = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=b1fb0b783ce64faeafa914d37ad2f19c&query=' + userSearch + " dinner";
      
     fetch(requestUrl)
       .then(function (response) {
@@ -163,7 +175,7 @@ function inputHandler(event) {
   function getApi2() {
     // calls the API a second time with the recipe ID number for more specific information
     
-     var requestUrl2 = "https://api.spoonacular.com/recipes/informationBulk?apiKey=254301e6f27a4fd1a78627b0c66f55d4&ids="+ recipeID1 + "," + recipeID2 + "," + recipeID3 + "&includeNutrition=false";
+     var requestUrl2 = "https://api.spoonacular.com/recipes/informationBulk?apiKey=b1fb0b783ce64faeafa914d37ad2f19c&ids="+ recipeID1 + "," + recipeID2 + "," + recipeID3 + "&includeNutrition=false";
       
     fetch(requestUrl2)
       .then(function (response2) {
@@ -215,9 +227,21 @@ function getCocktailOneApi() {
     cocktailOneImg.setAttribute("style", "border-radius: 40px");
     cocktailOneImg.setAttribute("src", data.drinks[0].strDrinkThumb);
    
-    var cocktailOneInstructionsList = data.drinks[0].strIngredient1 + ", " + data.drinks[0].strIngredient2 + ", " + data.drinks[0].strIngredient3 + ", " + data.drinks[0].strIngredient4 + ", " + data.drinks[0].strIngredient5 + ", " + data.drinks[0].strIngredient6 + ", " + data.drinks[0].strIngredient7 + ", " + data.drinks[0].strIngredient8 + ", " + data.drinks[0].strIngredient9 + ", " + data.drinks[0].strIngredient10;
-    cocktailOneInstructionsList = cocktailOneInstructionsList.replaceAll("null", "glug");
-    cocktailOneInstructions.textContent = cocktailOneInstructionsList + "!";
+    var cocktailOneInstructionsListOne = data.drinks[0].strMeasure1 + " " + data.drinks[0].strIngredient1;
+   var cocktailOneInstructionsListTwo = data.drinks[0].strMeasure2 + " " + data.drinks[0].strIngredient2;
+   var cocktailOneInstructionsListThree = data.drinks[0].strMeasure3 + " " + data.drinks[0].strIngredient3;
+   var cocktailOneInstructionsListFour =data.drinks[0].strMeasure4 + " " + data.drinks[0].strIngredient4;
+   var cocktailOneInstructionsListFive = data.drinks[0].strMeasure5 + " " + data.drinks[0].strIngredient5;
+    cocktailOneInstructionsListOne = cocktailOneInstructionsListOne.replaceAll("null", "");
+    cocktailOneInstructionsListTwo = cocktailOneInstructionsListTwo.replaceAll("null", "");
+    cocktailOneInstructionsListThree = cocktailOneInstructionsListThree.replaceAll("null", "");
+    cocktailOneInstructionsListFour = cocktailOneInstructionsListFour.replaceAll("null", "");
+    cocktailOneInstructionsListFive = cocktailOneInstructionsListFive.replaceAll("null", "");
+    cocktailOneInstructionsOne.textContent = cocktailOneInstructionsListOne;
+    cocktailOneInstructionsTwo.textContent = cocktailOneInstructionsListTwo;
+    cocktailOneInstructionsThree.textContent = cocktailOneInstructionsListThree;
+    cocktailOneInstructionsFour.textContent = cocktailOneInstructionsListFour;
+    cocktailOneInstructionsFive.textContent = cocktailOneInstructionsListFive;
   })
   }
   function getCocktailTwoApi() {
@@ -237,9 +261,21 @@ function getCocktailOneApi() {
       cocktailTwoImg.setAttribute("style", "border-radius: 40px");
       cocktailTwoImg.setAttribute("src", data.drinks[0].strDrinkThumb);
 
-      var cocktailTwoInstructionsList = data.drinks[0].strIngredient1 + ", " + data.drinks[0].strIngredient2 + ", " + data.drinks[0].strIngredient3 + ", " + data.drinks[0].strIngredient4 + ", " + data.drinks[0].strIngredient5 + ", " + data.drinks[0].strIngredient6 + ", " + data.drinks[0].strIngredient7 + ", " + data.drinks[0].strIngredient8 + ", " + data.drinks[0].strIngredient9 + ", " + data.drinks[0].strIngredient10;
-      cocktailTwoInstructionsList = cocktailTwoInstructionsList.replaceAll("null", "glug");
-      cocktailTwoInstructions.textContent = cocktailTwoInstructionsList + "!";
+   var cocktailTwoInstructionsListOne = data.drinks[0].strMeasure1 + " " + data.drinks[0].strIngredient1;
+   var cocktailTwoInstructionsListTwo = data.drinks[0].strMeasure2 + " " + data.drinks[0].strIngredient2;
+   var cocktailTwoInstructionsListThree = data.drinks[0].strMeasure3 + " " + data.drinks[0].strIngredient3;
+   var cocktailTwoInstructionsListFour =data.drinks[0].strMeasure4 + " " + data.drinks[0].strIngredient4;
+   var cocktailTwoInstructionsListFive = data.drinks[0].strMeasure5 + " " + data.drinks[0].strIngredient5;
+    cocktailTwoInstructionsListOne = cocktailTwoInstructionsListOne.replaceAll("null,", "");
+    cocktailTwoInstructionsListTwo = cocktailTwoInstructionsListTwo.replaceAll("null", "");
+    cocktailTwoInstructionsListThree = cocktailTwoInstructionsListThree.replaceAll("null", "");
+    cocktailTwoInstructionsListFour = cocktailTwoInstructionsListFour.replaceAll("null", "");
+    cocktailTwoInstructionsListFive = cocktailTwoInstructionsListFive.replaceAll("null", "");
+    cocktailTwoInstructionsOne.textContent = cocktailTwoInstructionsListOne;
+    cocktailTwoInstructionsTwo.textContent = cocktailTwoInstructionsListTwo;
+    cocktailTwoInstructionsThree.textContent = cocktailTwoInstructionsListThree;
+    cocktailTwoInstructionsFour.textContent = cocktailTwoInstructionsListFour;
+    cocktailTwoInstructionsFive.textContent = cocktailTwoInstructionsListFive;
     })
     }
     function getCocktailThreeApi() {
@@ -259,9 +295,21 @@ function getCocktailOneApi() {
         cocktailThreeImg.setAttribute("style", "border-radius: 40px");
         cocktailThreeImg.setAttribute("src", data.drinks[0].strDrinkThumb);
 
-        var cocktailThreeInstructionsList = data.drinks[0].strIngredient1 + ", " + data.drinks[0].strIngredient2 + ", " + data.drinks[0].strIngredient3 + ", " + data.drinks[0].strIngredient4 + ", " + data.drinks[0].strIngredient5 + ", " + data.drinks[0].strIngredient6 + ", " + data.drinks[0].strIngredient7 + ", " + data.drinks[0].strIngredient8 + ", " + data.drinks[0].strIngredient9 + ", " + data.drinks[0].strIngredient10;
-        cocktailThreeInstructionsList = cocktailThreeInstructionsList.replaceAll("null", "glug");
-        cocktailThreeInstructions.textContent = cocktailThreeInstructionsList + "!";
+   var cocktailThreeInstructionsListOne = data.drinks[0].strMeasure1 + " " + data.drinks[0].strIngredient1;
+   var cocktailThreeInstructionsListTwo = data.drinks[0].strMeasure2 + " " + data.drinks[0].strIngredient2;
+   var cocktailThreeInstructionsListThree = data.drinks[0].strMeasure3 + " " + data.drinks[0].strIngredient3;
+   var cocktailThreeInstructionsListFour =data.drinks[0].strMeasure4 + " " + data.drinks[0].strIngredient4;
+   var cocktailThreeInstructionsListFive = data.drinks[0].strMeasure5 + " " + data.drinks[0].strIngredient5;
+    cocktailThreeInstructionsListOne = cocktailThreeInstructionsListOne.replaceAll("null,", "");
+    cocktailThreeInstructionsListTwo = cocktailThreeInstructionsListTwo.replaceAll("null", "");
+    cocktailThreeInstructionsListThree = cocktailThreeInstructionsListThree.replaceAll("null", "");
+    cocktailThreeInstructionsListFour = cocktailThreeInstructionsListFour.replaceAll("null", "");
+    cocktailThreeInstructionsListFive = cocktailThreeInstructionsListFive.replaceAll("null", "");
+    cocktailThreeInstructionsOne.textContent = cocktailThreeInstructionsListOne;
+    cocktailThreeInstructionsTwo.textContent = cocktailThreeInstructionsListTwo;
+    cocktailThreeInstructionsThree.textContent = cocktailThreeInstructionsListThree;
+    cocktailThreeInstructionsFour.textContent = cocktailThreeInstructionsListFour;
+    cocktailThreeInstructionsFive.textContent = cocktailThreeInstructionsListFive;
       })
       }
   
