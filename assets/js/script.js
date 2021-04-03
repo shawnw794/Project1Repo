@@ -351,3 +351,4 @@ function darkMode() {
     navButton.setAttribute("style", "color:maroon");
   }
 }
+

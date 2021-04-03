@@ -36,6 +36,7 @@ body {
     padding-top: 15px;
     padding-bottom: 15px;
     border: 0 !important;
+    border-color: rgba(255, 255, 255, 0) !important;
     border-radius: 0;
     margin-bottom: 0;
     font-size: 16px;
@@ -47,6 +48,13 @@ body {
 
 .navbar-dark a {
     color: rgba(255,255,255,.55) !important;
+}
+
+#navTog1 {
+    border-color: rgba(255, 255, 255, 0) !important;
+}
+#navTog2 {
+    border-color: rgba(255, 255, 255, 0) !important;
 }
 
 /*  Navigation Title */
