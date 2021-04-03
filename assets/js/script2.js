@@ -279,11 +279,17 @@ function darkMode() {
   var cocktailCard1 = document.querySelector("#cocktailCard1");
   var cocktailCard2 = document.querySelector("#cocktailCard2");
   var cocktailCard3 = document.querySelector("#cocktailCard3");
+  var modalHeader = document.querySelector("#modal-header");
+  var modalBody = document.querySelector("#modal-body");
+  var modalClose = document.querySelector("#close");
   var dropdown = document.querySelector("#dropdown");
   darkBody.classList.toggle("dark-mode");
   darkNav.classList.toggle("navbar-dark");
-  dropdown.classList.toggle("dropdown-menu-dark");
   navButton.setAttribute("style", "color:black");
+  dropdown.classList.toggle("dropdown-menu-dark");
+  modalHeader.classList.toggle("modal-header-dark")
+  modalBody.classList.toggle("modal-body-dark");
+  modalClose.classList.toggle("close-dark");
   darkCard1.classList.toggle("recipe-dark");
   darkCard2.classList.toggle("recipe-dark");
   darkCard3.classList.toggle("recipe-dark");

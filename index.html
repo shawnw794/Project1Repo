@@ -25,12 +25,12 @@
     <body id="body">
 
         <!--Navigation-->
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg" id="navBar">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Home Kitchen Pro</a>
+              <a class="navbar-brand" href="#" id="navbar-brand">Home Kitchen Pro</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
                 <span class="navbar-toggler">   
-                    <i class="fas fa-bars" style="color:maroon; font-size:30px;"></i>
+                    <i class="fas fa-bars" id ="navButton" style="color:maroon; font-size:30px;"></i>
                 </span>           
             </button>
             </div>
@@ -38,7 +38,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
             <!-- Links and dropdown links on the navbar should be under construction - will work on attaching other HTML pages -->
-                    <a class="nav-link active" aria-current="page" href="">Home</a>
+                    <a class="nav-link" aria-current="page" href="">Home</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="index2.html">Helpful Links</a>
@@ -46,21 +46,21 @@
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="index3.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Other Resources</a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="index4.html">Trending Recipes</a></li>
-                      <li><a class="dropdown-item" href="index5.html">Popular Wines</a></li>
-                      <li><a class="dropdown-item" href="index6.html">Tips for Entertaing at Home</a></li>
-                      <li><a class="dropdown-item" href="index7.html">Cocktails and Appetizers</a></li>
+                    <ul class="dropdown-menu" id="dropdown" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="./index4.html">Trending Recipes</a></li>
+                      <li><a class="dropdown-item" href="./index5.html">Popular Wines</a></li>
+                      <li><a class="dropdown-item" href="./index6.html">Tips for Entertaing at Home</a></li>
+                      <li><a class="dropdown-item" href="./index7.html">Cocktails and Appetizers</a></li>
                     </ul>
                   </li>
                 </ul>
               </div>
             </div>
-            <button id="themeToggler"><span>Dark Mode</span></button>
+            <button id="themeToggler">Dark-Mode</button>
             </nav>
                 <form class="d-flex" id="searchForm">
                   <input class="form-control me-2" id="searchInput" name="searchInput" type="search" placeholder="Search for Recipes" aria-label="Search">
-                  <button class="btn btn-outline-light" id="searchBtn" type="submit">Search</button>
+                  <button class="btn btn-outline-light searchBtn" id="searchBtn"  type="submit">Search</button>
                 </form>
           <!-- Recipes -->
           <div id="landingPage" style="display: block">
@@ -120,7 +120,7 @@
         <div class="slideshow-container">
             <div class="cocktailSlideshow">
                 <div class="cocktail-group">
-                    <div class="card mb-3 col-sm-9 cocktail">
+                    <div class="card mb-3 col-sm-9 cocktail" id="cocktailCard1">
                         <div class="row g-0">
                           <div class="col-md-4">
                             <img src="..." class= "p-4" id= "cocktailOneImg" alt="...">
@@ -140,7 +140,7 @@
             </div>
             <div class="cocktailSlideshow">
                 <div class="cocktail-group">
-                    <div class="card mb-3 col-sm-9 cocktail">
+                    <div class="card mb-3 col-sm-9 cocktail" id="cocktailCard2">
                         <div class="row g-0">
                           <div class="col-md-4">
                             <img src="..." class= "p-4" id= "cocktailTwoImg" alt="...">
@@ -160,7 +160,7 @@
             </div>
             <div class="cocktailSlideshow">
                 <div class="cocktail-group">
-                    <div class="card mb-3 col-sm-9 cocktail">
+                    <div class="card mb-3 col-sm-9 cocktail" id="cocktailCard3">
                         <div class="row g-0">
                           <div class="col-md-4">
                             <img src="..." class= "p-4" id= "cocktailThreeImg" alt="...">

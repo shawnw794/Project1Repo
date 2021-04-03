@@ -1,7 +1,7 @@
 /* General Body */
 body {
     background-color: rgb(82, 3, 3);
-    color: antiquewhite;
+    color: white;
     text-align: center;
     width: 100%;
     height: 100vh;
@@ -13,7 +13,7 @@ body {
 
 .dark-mode {
     background-color: black !important;
-    color: white;
+    color: grey;
 
 }
 
@@ -30,6 +30,24 @@ body {
     white-space: nowrap;
     padding-right: 200px;
 }
+.navbar-dark {
+    color: grey;
+    background-color: grey;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0 !important;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    width: 100%;
+    white-space: nowrap;
+    padding-right: 200px;
+
+}
+
+.navbar-dark a {
+    color: rgba(255,255,255,.55) !important;
+}
 
 /*  Navigation Title */
 .navbar-brand {
@@ -42,6 +60,7 @@ body {
     color: rgb(82, 3, 3);
 }
 
+
 @media screen and (min-width: 800px) {
     .navbar-brand {
         font-size: 50px;
@@ -52,6 +71,7 @@ body {
 .navbar a {
     color: rgb(82, 3, 3);
 }
+
 
 .navbar-nav li {
     font-weight: 500;
@@ -68,12 +88,21 @@ body {
     background-color: rgb(224, 195, 157);
     border-color: rgb(82, 3, 3);
 }
+.dropdown-menu-dark {
+    background-color: black;
+    border-color: grey;
+}
 
 /* Dropdown Underlining when Hovering */
 .dropdown-menu a:hover {
     text-decoration: underline;
     background-color: rgb(224, 195, 157);
     color: rgb(82, 3, 3);
+}
+.dropdown-menu-dark a:hover {
+    text-decoration: underline;
+    background-color: black;
+    color: grey;
 }
 
 /* User Input Bar to Search Recipe */
@@ -96,11 +125,22 @@ body {
 }
 
 /* Search Button, there is a class in HTML to create a light outline when clicked */
-#searchBtn {
+.searchBtn {
     cursor: pointer;
     color: rgb(82, 3, 3);
     background-color: rgb(224, 195, 157);
     border-color: rgb(224, 195, 157);
+    border-width: 5px;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.searchBtn-dark {
+    cursor: pointer;
+    color: grey;
+    background-color: black;
+    border-color: grey;
     border-width: 5px;
     margin-right: 10px;
     margin-top: 20px;
@@ -118,6 +158,19 @@ body {
     margin-bottom: 40px;
     border-radius: 20px;
 }
+.recipe-dark {
+    background-color: grey;
+    color: rgb(82, 3, 3);
+    height: auto;
+    flex-grow: inherit;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+}
+.recipe-dark a {
+    color: black;  
+}
 
 /* Cocktail Cards */
 .cocktail {
@@ -131,6 +184,20 @@ body {
     border-radius: 20px;
 }
 
+.cocktail-dark {
+    background-color: grey;
+    color: rgb(82, 3, 3);
+    height: auto;
+    flex-grow: inherit;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+}
+
+.cocktail-dark a {
+    color: black;  
+}
 
 /* Slideshow */
 .slideshow-container {
@@ -209,9 +276,20 @@ footer {
     color: rgb(224, 195, 157);
 }
 
+.modal-header-dark {
+    background-color: grey;
+    color: white;
+}
+
+
 .close {
     background-color: rgb(224, 195, 157);
     color: rgb(82, 3, 3);
+}
+
+.close-dark {
+    background-color: black;
+    color: white;
 }
 
 .modal-title {
@@ -221,4 +299,9 @@ footer {
 .modal-body {
     background-color: rgb(250, 235, 215);
     color: rgb(82, 3, 3);
+}
+
+.modal-body-dark {
+    background-color: black;
+    color: grey;
 }
